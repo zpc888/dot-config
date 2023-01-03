@@ -24,6 +24,9 @@ packer.startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
+        setup = function()
+            require("zpc.pluginsrc.telescope")
+        end,
 	})
 	use("nvim-telescope/telescope-file-browser.nvim")
 
@@ -54,7 +57,13 @@ packer.startup(function(use)
 
 	-- File management --
 	use("vifm/vifm.vim")
-	use("scrooloose/nerdtree")
+	use({
+        "scrooloose/nerdtree",
+        setup = function()
+            require("zpc.pluginsrc.nerdtree")
+        end,
+    })
+
 	use("tiagofumo/vim-nerdtree-syntax-highlight")
 	use("ryanoasis/vim-devicons")
 
