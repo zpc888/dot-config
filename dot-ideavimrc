@@ -1,0 +1,163 @@
+let mapleader = " "
+
+set ignorecase
+set smartcase
+
+set relativenumber
+set nu
+set ideajoin
+set ideaput
+set ideamarks
+
+
+set surround
+
+" NERDTree
+set NERDTree
+" let g:NERDTreeMapActivateNode='l'
+" let g:NERDTreeMapJumpParent='h'
+" map <leader>nn :NERDTree<CR>
+" map <leader>nf :NERDTreeFind<CR>
+map <C-n> :NERDTree<CR>
+map <C-S-n> :NERDTreeFind<CR>
+
+" Plugin 'tpope/vim-commentary'
+set commentary
+
+" copy to system clipboard as well
+set clipboard+=unnamed
+
+map <leader>z <action>(ToggleDistractionFreeMode)
+
+" Full screen window --- window only
+nmap <leader>wo :action HideAllWindows<cr>
+
+" Switch projects --- window workspace
+nmap <leader>ww :action NextProjectWindow<cr>
+
+" Increase or decrease font size
+nnoremap <C-=> :action EditorIncreaseFontSize<cr>
+nnoremap <C--> :action EditorDecreaseFontSize<cr>
+
+
+" Navigation
+nmap <leader>h :action Back<cr>
+nmap <leader>l :action Forward<cr>
+nmap <leader>L :action RecentLocations<cr>
+nmap <leader>u :action FindUsages<cr>
+nmap <leader>C :action CallHierarchy<cr>
+nmap <leader>f :action GotoFile<cr>
+nmap <leader>c :action GotoClass<cr>
+nmap <leader>s :action GotoSymbol<cr>
+nmap <leader>m :action ToggleBookmark<cr>
+nmap <leader>; :action FileStructurePopup<cr>
+nmap <leader>M :action ActivateStructureToolWindow<cr>
+nmap <leader>d :action ShowErrorDescription<cr>
+nmap <leader>i :action GotoImplementation<cr>
+nmap <leader>U :action GotoSuperMethod<cr>
+nmap <leader>I :action SelectIn<cr>
+nmap <leader>e :action RecentFiles<cr>
+nmap <leader>a :action RecentChangedFiles<cr>
+nmap <leader>t :action GotoTest<cr>
+nmap <leader>p :action JumpToLastWindow<cr>
+nmap <leader>b :action ShowBookmarks<cr>
+
+" Useful Git actions
+nmap <leader>gb :action Git.Branches<cr>
+nmap <leader>gp :action Git.Pull<cr>
+nmap <leader>gu :action Git.Push<cr>
+nmap <leader>gr :action Git.Rebase<cr>
+nmap <leader>gm :action Git.Merge<cr>
+
+" nmap <leader>a :action Switcher<cr>
+nmap ,a :action GotoAction<cr>
+
+" Errors
+nmap <leader>x :action GotoNextError<cr>
+nmap <leader>X :action GotoPreviousError<cr>
+
+" Refactorings
+vmap T :action Refactorings.QuickListPopupAction<cr>
+vmap <leader>rm :action ExtractMethod<cr>
+nmap <leader>rr :action RenameElement<cr>
+nmap <leader>rg :action Generate<cr>
+nmap <leader>rI :action OptimizeImports<cr>
+" Inspection
+nmap <leader>rc :action InspectCode<cr>
+
+" Terminal
+" nmap <leader>T :action ActivateTerminalToolWindow<cr>
+nmap <C-t> :action ActivateTerminalToolWindow<cr>
+nmap <C-S-t> :action Terminal.OpenInTerminal<cr>
+
+" Gradle
+nmap <leader>G :action ActivateGradleToolWindow<cr>
+
+" External GVim
+nmap <leader>v :action Tool_External Tools_mvim<cr>
+
+nnoremap [m :action MethodUp<cr>
+nnoremap ]m :action MethodDown<cr>
+nnoremap [c :action VcsShowPrevChangeMarker<cr>
+nnoremap ]c :action VcsShowNextChangeMarker<cr>
+
+" Search
+nmap <leader>/ :action Find<cr>
+nmap <leader>\ :action FindInPath<cr>
+
+" Moving lines
+nmap [e :action MoveLineUp<cr>
+nmap ]e :action MoveLineDown<cr>
+" Moving statements
+nmap [s :action MoveStatementUp<cr>
+nmap ]s :action MoveStatementDown<cr>
+
+" Building, Running and Debugging
+nmap ,c :action CompileDirty<cr>
+nmap ,r :action Run<cr>
+nmap ,R :action RunAnything<cr>
+nmap ,b :action Debug<cr>
+nmap ,c :action RunClass<cr>
+nmap ,d :action DebugClass<cr>
+nmap ,t :action RerunTests<cr>
+nmap ,T :action RerunFailedTests<cr>
+nmap ,p :action ToggleLineBreakpoint<cr>
+nmap ,i :action ParameterInfo<cr>
+
+" Useful Quick actions
+nmap ,, :action QuickJavaDoc<cr>
+nmap ,H :action LocalHistory.ShowHistory<cr>
+nmap ,e :action JumpToLastChange<cr>
+" AceJump shortcut
+nmap <leader>j :action AceAction<cr>
+nmap ,yy :action CopySourceRootPath<cr>
+nmap ,ya :action CopyAbsolutePath<cr>
+nmap ,l :action RecentLocations<cr>
+nmap ,S :action ShowProjectStructureSettings<cr>
+
+" Pin/Unpin active tab
+nmap \p :action PinActiveTabToggle<cr>
+
+" easymotion
+" Need IdeaVim-EasyMotion and AceJump Plugns
+" Basic commands:
+"     easy-motion-f Search forward
+"     easy-motion-s Search backward
+" Plugin 'easymotion/vim-easymotion'
+set easymotion
+nnoremap , <C-;>
+map <leader>j <Plug>(easymotion-f)
+map <leader>J <Plug>(easymotion-s)
+
+" Plugin 'terryma/vim-multiple-cursors'
+set multiple-cursors
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_start_word_key      = 'mn'
+let g:multi_cursor_select_all_word_key = 'mN'
+let g:multi_cursor_start_key           = 'gmn'
+let g:multi_cursor_select_all_key      = 'gmN'
+let g:multi_cursor_next_key            = 'mn'
+let g:multi_cursor_prev_key            = 'mp'
+let g:multi_cursor_skip_key            = 'mx'
+let g:multi_cursor_quit_key            = '<Esc>'
+
